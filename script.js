@@ -2,7 +2,6 @@
 let counter = 0;
 
 const counterDisplay = document.getElementById("counter");
-const clickbutton = document.getElementById("clickbutton");
 
 // Update counter display
 function updateDisplay() {
@@ -16,12 +15,6 @@ function updateDisplay() {
     counterDisplay.classList.remove("updated");
   }, 200);
 }
-
-// Increment counter on button click
-clickbutton.addEventListener("click", () => {
-  counter++;
-  updateDisplay();
-});
 
 // Initialize display on page load
 updateDisplay();
@@ -67,7 +60,7 @@ function createPopup() {
   // Create test button
   testButton = document.createElement("button");
   testButton.className = "test-button";
-  testButton.textContent = "Accept";
+  testButton.textContent = "Accept Now";
 
   // Assemble popup
   popupContent.appendChild(closeButton);
@@ -80,6 +73,10 @@ function createPopup() {
   // Attach event listeners
   closeButton.addEventListener("click", hidePopup);
   testButton.addEventListener("click", () => {
+    // Increment counter when Accept Now is clicked
+    counter++;
+    updateDisplay();
+    // Also change colors
     colorIndex = (colorIndex + 1) % colorSchemes.length;
     const scheme = colorSchemes[colorIndex];
     document.body.style.background = scheme.bg;

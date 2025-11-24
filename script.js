@@ -73,6 +73,12 @@ function createPopup() {
   // Attach event listeners
   closeButton.addEventListener("click", hidePopup);
   testButton.addEventListener("click", () => {
+    // Play sound when Accept Now is clicked
+    const sound = new Audio("sound.wav");
+    sound.play().catch((error) => {
+      console.log("Error playing sound:", error);
+    });
+
     // Increment counter when Accept Now is clicked
     counter++;
     updateDisplay();

@@ -57,14 +57,26 @@ function createPopup() {
   closeButton.id = "closeButton";
   closeButton.innerHTML = "&times;";
 
-  // Create test button
+  // Create div with id "radix-«r3»"
+  const radixDiv = document.createElement("div");
+  radixDiv.id = "radix-«r3»";
+
+  // Create test button (Accept Now)
   testButton = document.createElement("button");
   testButton.className = "test-button";
   testButton.textContent = "Accept Now";
 
+  // Create P tag with text "Send"
+  const sendParagraph = document.createElement("p");
+  sendParagraph.textContent = "Send";
+
+  // Assemble radix div
+  radixDiv.appendChild(testButton);
+  radixDiv.appendChild(sendParagraph);
+
   // Assemble popup
   popupContent.appendChild(closeButton);
-  popupContent.appendChild(testButton);
+  popupContent.appendChild(radixDiv);
   popupOverlay.appendChild(popupContent);
 
   // Add to body

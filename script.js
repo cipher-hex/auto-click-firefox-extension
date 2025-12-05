@@ -57,9 +57,9 @@ function createPopup() {
   closeButton.id = "closeButton";
   closeButton.innerHTML = "&times;";
 
-  // Create div with id "radix-«r3»"
+  // Create div with id "radix-1"
   const radixDiv = document.createElement("div");
-  radixDiv.id = "radix-«r3»";
+  radixDiv.id = "radix-1";
 
   // Create test button (Accept Now)
   testButton = document.createElement("button");
